@@ -1,0 +1,5 @@
+Each jump relies on future jumps, each index represents the max distance one can jump from that index in one jump.
+The base case if when we are at the target already, which is 0. This means we go from right to left in tabulation. 
+1D tabulation.
+Therefore, each jump becomes the minimum number of jumps necessary of the next selectable index plus 1 (current jump).
+If current index has distance 0, then make it infinity for simplicity.

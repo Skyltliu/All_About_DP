@@ -1,0 +1,5 @@
+Intuition:
+
+Possible permutations of parentheses follow this pattern: ( +A +) +B
+A and B each has max length of number of pairs we need, i.e. if A is max length, then B is length 0.
+We can therefore recurse on A and B for the basic recursion solution, and add caching for top down DP.

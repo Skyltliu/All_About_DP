@@ -1,0 +1,6 @@
+Use 2D caching, each dp[i][j] represents whether the substring starting at i ending at j is palindromic.
+Intuition:
+
+If i and j are the same, that means it is a single character, which means it is a palindromic substring
+If the diff ebtween i and j is 1, then we can simply compare if they're the same character, and mark them as true if they're
+We can grow the DP table this way, and return dp[i][j], as in the input.

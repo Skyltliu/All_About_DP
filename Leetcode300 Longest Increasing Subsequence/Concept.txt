@@ -1,0 +1,8 @@
+This is a 0/1 knapsack style problem
+We can use a 1D dp array to store the max increasing subsequence at each dp[i]
+
+Intuition:
+base case is one, since even just one number counts as an increasing subsequence.
+We pass through the 1D dp array we created, and at each index, we compare if there was already a smaller number that we have passed.
+If so, we can check the length of the subsequence at that number's index (dp[j]), and if it is bigger than what we have at our current index,
+we can make our current index 1 + that length 

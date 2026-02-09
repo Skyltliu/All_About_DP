@@ -1,0 +1,9 @@
+Intuition:
+
+We can notice that we only need the tallest wall from the left of current index and the tallest wall from the right of current index
+to determine the potential of the amount of water at any given index. As for the precise amount of water at an index,
+it is simply the height of the shorter of the two tallest walls minus the base, which in this case is the height of the wall at the index.
+
+PS:
+The DP solution is not the most space efficient, since we store three arrays of length n, 
+in order to save space, we can use two pointers instead, sweeping from both sides, and moving the one that is the smaller max while updating the total amount of water concurrently.

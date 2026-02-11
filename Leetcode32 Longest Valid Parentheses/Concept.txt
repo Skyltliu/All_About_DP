@@ -1,0 +1,19 @@
+Use a 1D dp array
+Hint:
+dp[i] denotes the max number of valid parentheses ending at index i
+skip over '(', since it doesn't denote having a valid pair of parentheses.
+There are two cases,
+1: At index i, if it is a ')', we check previous and if it's '(', then we can add 2 to the previous count (dp[i-2]), 
+and compare against a global count.
+2: At index i, if it is a ')', we check previous and if its ')', then we can check the count of dp[i-1], 
+and the character before the length of dp[i-1], and if it is '(', then we can add 2. Finally, we check the count before that character, 
+which is dp[i-dp[i-1]-2], and add that to the count. Compare the current count against a global count.
+Return global count
+
+Concrete example of why case 2 works:
+s:
+( ) ( ( ) )
+0 1 2 3 4 5
+
+dp[4] stores value 2, even though (0,1) is another valid pair, because s[2] is '(', and we skip over those. 
+Therefore, if we are at index 4(dp[i-1]), dp[i-3](in this case dp[2]) returns 0 instead of local total count(length: 2)

@@ -1,0 +1,3 @@
+2D dp array, each cell represents the minimum number of steps needed to enter that cell [row][col]
+We can only move right or bottom, so we always move to the cell that is smaller in needed steps.
+We also need to consider current cell's value, if it is negative, we need 1 + (-dungeon[i][j]) for current cell, while considering the next cell.

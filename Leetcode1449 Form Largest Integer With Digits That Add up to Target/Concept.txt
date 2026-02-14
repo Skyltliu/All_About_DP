@@ -1,0 +1,24 @@
+1d dp table
+each cell is at target i, what is the max number of digits
+
+phase 1:
+objective: find max number of digits
+
+dp[0] = 0 since when target is 0, there is no digits
+
+loop through i from 1 to target, while looping through 1 through 9 in the inner loop
+
+find cost of index in the inner loop, dp at current target is the max of itself or stored length value of current target minus cost of any previous target.
+
+if dp[target] is still negative then it means it is impossible to add up to target, so return "0".
+
+phase 2:
+objective: fill each slot with the biggest digit from left to right
+
+while current target is positive, loop through 9 to 1 (greedy approach), 
+
+find cost of current greedy value, if dp[current target] is equal to dp[current target - cost] + 1, append current greedy value to result
+
+deduct cost from current target, move on to the next position
+
+return result

@@ -1,0 +1,8 @@
+Each cell represents the number of distinct subsequences of the prefix t[0...j-1] found in the prefix s[0...i-1].
+Hint:
+Make a len(s) + 1 by len(t) + 1 dimensions dp table.
+Base case would be when j is 0, meaning we need to find a ways of generating a string of 0 length from t in s, which would be 1.
+Recurrence relations:
+If current letters at s[i] and t[j] are not equal, we inherit the result from dp[i-1][j], since we can't generate new subsequences.
+If they are equal, the current cell should be the number of distinct ways if we don't include the current characters(dp[i-1][j]), in addition to 
+the number of ways if we include the current character(dp[i-1][j-1], pin the current characters, so only however many ways the prefix was able to generate matters)

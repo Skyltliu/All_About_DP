@@ -1,0 +1,4 @@
+Pigeon hole's principle, there can at most be number of characters in s2 number of cycles before repetitions start
+We first try to find the part where it starts repeating, and multiply.
+get the remaining part, and use the countr array we filled earlier to get the amount in the remaining part(attach it to the beginning of the repetition and use countr[k+...] - countr[k])
+add three parts divided by n2 and return 

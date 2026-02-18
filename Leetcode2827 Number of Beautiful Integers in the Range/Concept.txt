@@ -1,0 +1,3 @@
+Use digit dp top down with cache 
+For mod, use previous remainder times 10 plus d mod k to get the current remainder.
+For next_zeros, we only check even_c, odd_c, and mod if next_zeros is false, meaning we are over the leading zeros portion.

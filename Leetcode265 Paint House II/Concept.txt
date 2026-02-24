@@ -1,0 +1,10 @@
+Do inplace dp
+
+For regular tabulation dp solution:
+Leave first row as is, for every other row, 
+add each cell with the min value from the previous row besides the column the current cell is in.
+Lastly, return the min value in the last row
+
+For time optimized solution:
+Only find the two min values from previous row, and add their value to the current cell, 
+if min is in the same column, use second_min, vice versa. The rest is the same

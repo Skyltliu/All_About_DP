@@ -1,0 +1,7 @@
+THIS IS ACTUALLY NOT A DP PROBLEM*****
+
+
+There can be minutesToTest divided by minutesToDie turns for the pigs,
+Each pig has (turns + 1) outcomes: survive, die in first turn, second turn, etc.
+When we have multiple pigs, the aggregate number of bits of info we can carry is (turns + 1)^(# of pigs).
+Make sure that is more than or equal to the required number of buckets.

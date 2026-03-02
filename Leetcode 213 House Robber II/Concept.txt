@@ -1,0 +1,4 @@
+Reuse code from house robber 1, but because nums is cyclic,
+the first and last house can't both be robbed at the same time.
+Therefore, run the original house robber algo on the subarray of nums[1:] and the subarray of nums[:-1].
+If size of nums is 1, return it, else return max of the two subarrays.

@@ -1,0 +1,2 @@
+This is like jump game, but when the value is -1, we stop moving. Additionally, we have to return the path, 
+so we need an additional list. Lastly, reconstruct path using that list.

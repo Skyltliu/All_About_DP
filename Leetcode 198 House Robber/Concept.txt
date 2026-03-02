@@ -1,0 +1,3 @@
+1d DP
+Base case: At dp[0], the max is nums[0], at dp[1], we can pick either the first one or the current one.
+Reccurence relations: We can pick the current one plus the ones before the previous one, or the previous one and skip current.

@@ -1,0 +1,13 @@
+similar logic as best time to buy and sell stock 1, except we can buy & sell multiple times.
+
+Example:
+Input: prices = [1,2,3,4,5]
+Output: 4
+Instead of thinking it as buy on day 1 and sell on day 5, think of it as
+buy on day 1, sell on day 2, buy on day 2, sell on day 3, so on and so forth.
+You will notice the result also comes out as 4.
+
+In the DP solution, however,
+we can reuse the code from best time to buy and sell stock 1, but in the 
+holding case of the recurrence relations, instead of -prices[i], we roll over the profit from the previous days, 
+and subtract prices[i]

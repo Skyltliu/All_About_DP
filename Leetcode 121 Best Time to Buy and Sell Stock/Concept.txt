@@ -11,6 +11,6 @@ Recurrence relation would be:
 1. To hold a stock, we want either the amount you held yesterday 
 or today's price (remember it is negative since you buy and you owe), whichever one is smaller
 
-2. To sell a stock, we want the max of what you were not holding yesterday or the amount you get for selling today's stock (hence we use negative for when we hold a stock)
+2. To sell a stock, we want the max of what you were not holding yesterday (previous sale) or the amount you get for selling today's stock (hence we use negative for when we hold a stock)
 
 return last value of not holding a stock

@@ -1,0 +1,17 @@
+Hint: The transaction is officially counted at the moment of selling, there are at most 2 transactions.
+
+Use 3D DP, dp[i][0][k], dp[i][1][k]
+The max profit at day i after selling (0) after completely finishing j transactions
+The min holding at day i (1, after buying) after completely finishing j transactions
+
+buy first sell next, if j == 0, dp[i][0][j] should always be 0, since can't sell when there is no prev transactions.
+Buying does not increment j, while selling does increment j
+Buying simply moves you from cash to stock
+As a result, we have an extra dead line of dp[i][1][k], meaning we have an extra buying happening at the end of the loop,
+which is also avoided by returning max(dp[n-1][0]), remember we have at max two transactions and don't have to have 2.
+
+i.e. after buy and after sell are what the dp array returns
+buy after-buy sell (transaction 1) after-sell 
+buy after-buy sell (transaction 2) after-sell...
+
+

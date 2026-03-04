@@ -1,0 +1,16 @@
+2d dp
+Hint:
+Each cell is the max profit that you can make at day i and with status of either holding a stock or not holding a stock
+dp[i][0] means not holding a stock
+dp[i][1] means holding a stock
+
+the base case would be when holding a stock, dp[0][1] = -prices[0]
+when not holding a stock, dp[0][0] = 0
+
+Recurrence relation would be:
+1. To hold a stock, we want either the amount you held yesterday 
+or today's price (remember it is negative since you buy and you owe), whichever one is smaller
+
+2. To sell a stock, we want the max of what you were not holding yesterday or the amount you get for selling today's stock (hence we use negative for when we hold a stock)
+
+return last value of not holding a stock

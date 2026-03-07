@@ -1,0 +1,21 @@
+top down dp with caching
+pass in indices i and j, i starts at first index, and j starts at the last index.
+base case:
+if i is greater than j, just return 0
+
+Recurrence relations:
+depending on whether it's Alice or Bob's turn.
+If it is Alice's turn, we want the max of taking the first element plus the rest or the last element plus the rest
+If it is Bob's turn, we want the minimum of taking the negative of the first element plus the rest or the negative of the last element plus the rest.
+
+To check if it is Alice or Bob's turn, use the length of the piles minus number of checked piles and mod 2, if it returns
+0, then it is the first person's turn, else the second person(Bob).
+
+Lastly, if the result of the dp is negative, it means Bob wins, else Alice wins.
+
+
+
+Alternative Math Solution:
+return True
+
+Because, Alice who goes first always can decide which element to take and win.

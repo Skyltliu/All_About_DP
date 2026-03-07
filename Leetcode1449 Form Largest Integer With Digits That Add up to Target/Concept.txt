@@ -8,7 +8,9 @@ dp[0] = 0 since when target is 0, there is no digits
 
 loop through i from 1 to target, while looping through 1 through 9 in the inner loop
 
-find cost of index in the inner loop, dp at current target is the max of itself or stored length value of current target minus cost of any previous target.
+find cost of index in the inner loop, 
+dp at current target is the max of itself 
+or stored length value of current target(remember target is a cost) minus cost of any previous target.
 
 if dp[target] is still negative then it means it is impossible to add up to target, so return "0".
 

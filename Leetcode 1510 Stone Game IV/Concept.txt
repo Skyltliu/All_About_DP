@@ -1,0 +1,9 @@
+1d dp
+
+Base case:
+When there are no stones to choose from, we automatically lose (False), hence we initiate dp to size n+1, because dp[0]=False.
+
+At each step, we wanna know if it is possible to choose a square number(k) and make the opponet lose. If it is possible,
+we can win.
+
+Simply return dp[n]

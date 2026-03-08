@@ -1,0 +1,12 @@
+Use 1d dp, backward for loop
+dp[i] = best score difference at index i
+
+Base case:
+dp[n] = 0, at index n, there are no stones left, so 0.
+if i+k covers all, then what Bob takes won't matter, therefore it is 0.
+
+Recurrence Relations:
+current total sum of Alice - the current total sum of Bob.
+Try all 3 takes (k=3), Bob has to take the optimal amount of what is left, which is handled by induction.
+
+Lastly return depending on the value in dp[0]. 

@@ -1,0 +1,15 @@
+The description is wildly misleading. We are just updating M whenever X becomes greater than 2M, and X is just from 1 to 2M.
+M starts at 1, and we want to take the max amount across all possible current X number of piles.
+
+Remember that we go from left to right, and we want the max possible for Alice and Bob,
+we create a suffix array in which every element is the sum of all future elements plus the value of the current value.
+then we loop through all indices and all possible M's.
+
+Base case would be when we can grab all remaining piles, in which case we just return suffix at index i
+
+Recurrence relations:
+When i + max range(2*m) is smaller than the number of elements in piles,
+We do a trick, where we loop through all X's possible and pick the max.
+To calculate the amount we store in dp[i][m], we use a trick:
+We use the remaining suffix sum minus the part that we will get to next time using the dp table, which is i+X, and take the max value trying all X's.
+update M accordingly during the process.

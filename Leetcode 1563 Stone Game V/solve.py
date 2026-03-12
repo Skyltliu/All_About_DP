@@ -30,30 +30,26 @@ class Solution:
 class Solution:
     def stoneGameV(self, stoneValue: List[int]) -> int:
         n = len(stoneValue)
-        P = [0] * (n + 1)
-        for i in range(n):
-            P[i+1] = P[i] + stoneValue[i]
-            
+        p = [0] * (n+1)
         dp = [[0] * n for _ in range(n)]
         maxL = [[0] * n for _ in range(n)]
         maxR = [[0] * n for _ in range(n)]
-
         for i in range(n):
             maxL[i][i] = maxR[i][i] = stoneValue[i]
-
-        for i in range(n - 2, -1, -1):
-            mid = i 
-            for j in range(i + 1, n):
-                total = P[j+1] - P[i]
-                while mid < j and (P[mid+1] - P[i]) * 2 <= total:
+        for i in range(n):
+            p[i+1] = p[i] + stoneValue[i]
+        for i in range(n-2, -1, -1):
+            mid = i
+            for j in range(i+1, n):
+                total = p[j+1] - p[i]
+                while mid < j and (p[(mid)+1]-p[i]) * 2 <= total:
                     mid += 1
-                if i < mid:
+                if mid > i:
                     dp[i][j] = max(dp[i][j], maxL[i][mid-1])
                 if mid < j:
                     dp[i][j] = max(dp[i][j], maxR[mid+1][j])
-                if (P[mid] - P[i]) * 2 == total:
-                    dp[i][j] = max(dp[i][j], maxR[mid][j])
+                if (p[(mid-1) + 1] - p[i]) * 2 == total:
+                    dp[i][j] = max(max(dp[i][j], maxR[mid][j]), maxL[i][mid-1])
                 maxL[i][j] = max(maxL[i][j-1], total + dp[i][j])
                 maxR[i][j] = max(maxR[i+1][j], total + dp[i][j])
-                
         return dp[0][n-1]

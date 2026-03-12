@@ -13,3 +13,5 @@ To update maxL and maxR, we only need the MAX of previously stored values in the
 Same as knuth's optimization, we loop backwards for i and forward from i + 1 for j, because later on i will depend on i+1 and j will depend on j-1.
 
 We also need a prefix sum array for fast stone value sum lookups.
+
+PS. when we decide mid, we try to split at mid, after we have decided optimal split, mid has moved one past the last good split, so equal split is mid-1

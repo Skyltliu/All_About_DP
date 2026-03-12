@@ -1,0 +1,15 @@
+This is a modified knuth's optimization range dp problem
+
+we need to find mid where at mid, the left pile has close to equal sum as right pile.
+This way, we know that any k (meaning if we split in the left pile) in left pile would result in us keeping the left pile since the right pile is larger.
+Similarly, any k in right pile would result in us keeping right pile since left pile would be bigger.
+Therefore, we can consciously choose which pile to keep even as Alice (force Bob). 
+
+Additionally, we keep two lookup tables maxL and maxR, so that we can immediately look up the max value,
+dependent on where mid is and which k we ultimately choose, instead of looking up current k and then manually recurse down to look for the total max value in said pile.
+
+To update maxL and maxR, we only need the MAX of previously stored values in the pile range AND current total plus all past max choice scores stored in dp[i][j].
+
+Same as knuth's optimization, we loop backwards for i and forward from i + 1 for j, because later on i will depend on i+1 and j will depend on j-1.
+
+We also need a prefix sum array for fast stone value sum lookups.

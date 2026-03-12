@@ -1,12 +1,14 @@
 This is a modified knuth's optimization range dp problem
 
-we need to find mid where at mid, the left pile has close to equal sum as right pile.
-This way, we know that any k (meaning if we split in the left pile) in left pile would result in us keeping the left pile since the right pile is larger.
+we need to find mid where at mid, the left pile has close to equal sum as right pile. To find mid, we just loop through to find where left pile is equal to right pile in sum, 
+and then mid will fall in place at the first index where if we split, left pile is strictly smaller than right pile.
+
+This way, we know that any k (meaning if we split in the left pile) in left pile(strict) would result in us keeping the left pile since the right pile(strict) is larger.
 Similarly, any k in right pile would result in us keeping right pile since left pile would be bigger.
 Therefore, we can consciously choose which pile to keep even as Alice (force Bob). 
 
-Additionally, we keep two lookup tables maxL and maxR, so that we can immediately look up the max value,
-dependent on where mid is and which k we ultimately choose, instead of looking up current k and then manually recurse down to look for the total max value in said pile.
+Additionally, we keep two lookup tables maxL and maxR, so that we can immediately look up the max value, dependent on where mid is and which k we ultimately choose, 
+instead of looking up current k and then manually recurse down to look for the total max value in said pile.
 
 To update maxL and maxR, we only need the MAX of previously stored values in the pile range AND current total plus all past max choice scores stored in dp[i][j].
 
@@ -15,3 +17,6 @@ Same as knuth's optimization, we loop backwards for i and forward from i + 1 for
 We also need a prefix sum array for fast stone value sum lookups.
 
 PS. when we decide mid, we try to split at mid, after we have decided optimal split, mid has moved one past the last good split, so equal split is mid-1
+left pile k's: i, i+1, ..., mid-1
+right pile k's: mid, mid+1, ..., j-1
+k is the last index of the left half, right pile always start at k+1, mid after while loop is first index of right pile.

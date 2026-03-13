@@ -1,0 +1,17 @@
+Transform the characters to corresponding ASCII values but starting at 0
+
+We need a way to check if we can delete a range.
+To do that, we check if the range exists, then if the outermost two characters are equal(deletable), 
+recursively check if whatever is inside is deletable
+Otherwise, iteratively check if we can divide into two deletable partitions.
+
+In the main dp function:
+base case:
+index is one over max index, return empty string
+
+Recurrence relations:
+1. We take the first character, plus recursively the result of the remaining portion
+2. We check for the max length we can just delete, and then recursively check the result of the remainig portion
+return whichever one is smaller in value
+
+call recursion function on index 0

@@ -1,0 +1,15 @@
+There are a few possible combinations of possible cases for each value in the nums array:
+If val is even:
+Already 2 odd numbers before, or only 1 odd number before, or it is the first value: 
+then we can just use the number of odd 1 sequences + odd 2 sequences + 1 (new sequence) to denote this case (new even 1 case)
+
+Already 1 even, then it is just the number of even 1 sequences to denote this case (new even 2 case)
+
+Simply update number of even 1 and even 2 sequences with old numbers plus new numbers
+
+If val is odd:
+Mirror the first cases
+
+Lastly, return all cases (1 even, 2 even, 1 odd, 2 odd) together.
+
+P.S. Remember to mod 10^9 + 7 to the result you return

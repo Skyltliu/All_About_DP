@@ -1,0 +1,6 @@
+1D DP
+Unbounded Knapsack but with hidden skip cases since each dp cell stores a boolean value.
+
+Hint: set lookup is O(1), whereas list lookup is O(n)
+
+return dp[-1]

@@ -4,7 +4,7 @@ we need to find mid where at mid, the left pile has close to equal sum as right 
 and then mid will fall in place at the first index where if we split, left pile is strictly smaller than right pile.
 
 This way, we know that any k (meaning if we split in the left pile) in left pile(strict) would result in us keeping the left pile since the right pile(strict) is larger.
-Similarly, any k in right pile would result in us keeping right pile since left pile would be bigger.
+Similarly, any k in right pile would result in us keeping right pile since left pile would be bigger. Remember, k is split point (included in left pile), and k + 1 is right pile.
 Therefore, we can consciously choose which pile to keep even as Alice (force Bob). 
 
 Additionally, we keep two lookup tables maxL and maxR, so that we can immediately look up the max value, dependent on where mid is and which k we ultimately choose, 

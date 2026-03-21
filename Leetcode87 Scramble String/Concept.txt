@@ -1,0 +1,13 @@
+3d dp
+each cell is given a length and starting indices in s1 and s2, is the substring in s1 a scrambled versino of s2
+
+Base case:
+if x is 1 (length of substring is 1), then we only need to compare if the two characters (at indices i and j in s1 and s2) are equal.
+
+Recurrence relations:
+Then, we check, given a splitting point (ranging from 1 to second to last index), 
+we check if either left of s1 after splitting is equal to left of s2, and right of s1 is equal to right of s2, 
+or if left of s1 after splitting is equal to right of s2, and right of s1 is equal to left of s2.
+If either of these is true, then the current cell is True, meaning current s1 at index i is a scrambled substring of s2 at index j and length x.
+
+Lastly, return index 0 of s1, index 0 of s2, and length n (return from dp table)

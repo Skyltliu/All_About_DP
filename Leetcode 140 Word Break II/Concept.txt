@@ -1,0 +1,10 @@
+dp is dictionary
+
+Reverse loops, j steps through every possible length starting at current index.
+if it's last word in s, then we can safely check if its in wordDict, and add to current valid sentence list (i loop level)
+Else, we can get the sentences of the previous sentences (before current window, which is j + 1) using the dp dictionary, 
+and if current word is in wordDict, add current word to every sentence and eventually current valid sentence list.
+
+Then, we can add current valid sentence list to current index of dp dictionary
+
+Lastly, we just return first index of the dp dictionary (we go backwards in loops)

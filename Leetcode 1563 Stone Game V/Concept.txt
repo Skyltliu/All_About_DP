@@ -7,6 +7,8 @@ This way, we know that any k (meaning if we split in the left pile) in left pile
 Similarly, any k in right pile would result in us keeping right pile since left pile would be bigger. Remember, k is split point (included in left pile), and k + 1 is right pile.
 Therefore, we can consciously choose which pile to keep even as Alice (force Bob). 
 
+To choose between left and right pile, we also need to make sure that both piles exist, namely, mid - 1 greater than or equal to i and mid + 1 less than or equal to j.
+
 Additionally, we keep two lookup tables maxL and maxR, so that we can immediately look up the max value, dependent on where mid is and which k we ultimately choose, 
 instead of looking up current k and then manually recurse down to look for the total max value in said pile.
 

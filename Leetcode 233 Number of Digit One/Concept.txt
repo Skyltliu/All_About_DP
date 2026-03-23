@@ -33,4 +33,5 @@ then use the min value to make sure it never exceeds the maximum number of possi
 
 
 For the digit dp solution:
-
+We only keep track of current position, tightness, and count of numbers containing 1s.
+Remember to convert n to a string for digit dp.

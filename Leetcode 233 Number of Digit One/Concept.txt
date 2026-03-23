@@ -1,0 +1,36 @@
+For math solution, we need two parts at each digit place (hence while loop with condition i * = 10 each iteration)
+
+For each digit place, we need the number of total cycles of 1 appearing in that place times the contribution,
+added to the contributions in the remainder.
+
+
+for example:
+n = 2345
+
+for the first digit place (i = 1):
+There are 234 full cycles of number <= n where the first digit place is the number 1:
+1, 11, 21, 31, 41...
+
+Each contributes one number "1", so it is just (2345 / 10) * 1.
+
+Then, the remainder is 2340...2345, which is 5.
+For the remainder, the number of 1s can not be negative (use max),
+and we take the last digit place (for i = 10, we take last two, so on and so forth), 
+and the theoretical max is 9 as in 2349 (in last digit place, but it is 5 here because the number is 2345). 
+i happens to represent the maximum possible number of 1s from 0-9 in this case, which is 1 (if remainder is double digits, then there would be i = 10 possible such numbers: 10-19),
+therefore, we use the remainder minus the max possible number of 1s, and if it is lower than 0, we just clamp to 0, and if it is greater than
+the max possible number of 1s, we clamp it down to the max possible number of 1s, since it is impossible to have more than the max possible number of 1s.
+
+As an example for the remainder part:
+at i = 10, the max possible number of 1s is 10-19. 
+if we obtain a remainder of 13 after the moduluo operation to get the raminder,
+the result should be 4, since it is 10, 11, 12, and 13. Based on what we discussed, 
+the result in code should be min(max(4, 0), 10): we use the max function to clamp to a positive value, 
+then use the min value to make sure it never exceeds the maximum number of possible numbers containing 1s in the remainder.
+
+
+
+
+
+For the digit dp solution:
+

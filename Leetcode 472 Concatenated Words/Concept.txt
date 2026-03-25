@@ -1,0 +1,10 @@
+For bottom up dp:
+Use 1d dp array per word (loop through each word)
+dp[0] should be True, since empty strings for sure have a match in the words array
+
+For each word, we want to loop through its possible substrings (double for loop) and match them against words in the words array.
+If we can eventually find two parts that match up to two words in the words array, and it is not the same word, 
+then we can store True to the dp array at index i
+After looping through the substrings, if we have found our match for the current word, then we can append it
+
+Return the list of appended resulting words.

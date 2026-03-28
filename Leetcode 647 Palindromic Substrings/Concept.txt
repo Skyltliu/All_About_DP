@@ -1,0 +1,3 @@
+2d dp
+This is literally the exact same code as Leetcode 5 Longest Palindromic Substring,
+but instead of returning the indices of the longest palindromic substring, we keep a counter counting every single palindrome, and return the counter.

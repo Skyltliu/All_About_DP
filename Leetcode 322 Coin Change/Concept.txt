@@ -1,0 +1,3 @@
+1d dp
+Each cell is the min number of coins needed to fulfill that amount of money. 
+If not fulfillable, the cell should be infinity, and we return -1 in this case.

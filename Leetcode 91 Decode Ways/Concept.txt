@@ -1,0 +1,12 @@
+1d dp
+dp should be length of input number string
+Base case:
+dp[0] should be 1, so that we can kickstart the dp
+for dp[1], if the character is not 0, then we can decode it, therefore it is equal to 1 in this case.
+
+Recurrence relations:
+Starting at 2, we can either look at the current digit or the previous two digits(including current index):
+In the case we look at only current digit: If it is within range(non-zero), then we can inherit the amount from previous step (dp[i-1])
+In the case we look at two digits: If it is within range(10-26), then we can also inherit the amount from previous step (dp[i-2])
+
+Return last index from dp array.

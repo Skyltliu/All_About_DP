@@ -6,6 +6,7 @@ dp[n] = 0, at index n, there are no stones left, so 0.
 if i+k covers all, then what Bob takes won't matter, therefore it is 0.
 
 Recurrence Relations:
+i+k+1 cannot be greater than the total length of the pile, since i+k+1 indicates Alice taking all (stoneValue[i + k]) and leaving Bob an empty pile already.
 current total sum of Alice - the current total sum of Bob.
 Try all 3 takes (k=3), Bob has to take the optimal amount of what is left, which is handled by induction.
 

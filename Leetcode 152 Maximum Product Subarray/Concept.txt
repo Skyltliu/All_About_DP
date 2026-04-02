@@ -1,0 +1,8 @@
+At each step, we keep track of the current max and current min, and store the max into a res variable
+Current max at each step in the for loop should be the max between the current number, 
+the current number times the previous max and the current number times the previous min (negative * negative is positive)
+
+Current min at each step in the for loop should be the min between the current number, 
+the current number times the previous min and the current number times the current max (if curr is negative then it is the smallest)
+
+Simply return the res variable.

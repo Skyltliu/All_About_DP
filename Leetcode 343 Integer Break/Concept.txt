@@ -1,5 +1,7 @@
 1d dp
-Each dp cell should store the max product that you can get for i, including itself.
+Each dp cell should store the max product that you can get for i or i itself, whichever one is larger, 
+since future splits can just use i itself if it happens to be the remaining portion.
+
 For base case, for 1, 2, and 3, the max products are the numbers themselves.
 
 Recurrence Relations: 

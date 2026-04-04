@@ -1,0 +1,8 @@
+1d dp
+Each dp cell should store the max product that you can get for i, including itself.
+For base case, for 1, 2, and 3, the max products are the numbers themselves.
+
+Recurrence Relations: 
+Starting from 4, we either take the current number or try to break it by taking the current split index value(j) times the remaining product (dp[i-j]). We want the bigger value.
+
+Finally, just return the last number in the dp array. (Remember one indexed)

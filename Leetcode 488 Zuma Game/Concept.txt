@@ -4,5 +4,6 @@ We need a reduction function that can remove all the sequences of >= 3 of the sa
 
 In the main recursion function, for each ball in hand, we try to insert it.
 Base case: if the board is empty, return 0 since we don't have to insert any number of balls to clear an empty board.
-For each position in the board, we only insert if the colors in hand and board match, or if we are in between two balls of the same color on the board.
+For each position in the board, we only insert if the colors in hand and board match(hand is sorted, and dont try dups, since it doesn't change game state), 
+or if we are in between two balls of the same color on the board.
 The rest is extremely straightforward, if the recursion function returns infinity, we simply return -1 to indicate impossibility to clear board.

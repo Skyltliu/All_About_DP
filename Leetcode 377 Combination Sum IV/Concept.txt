@@ -1,0 +1,9 @@
+1d dp
+Unbounded knapsack
+Skip case is implicit, because we do nothing if we skip
+
+Base Case:
+When target is 0, there is exactly 1 way
+
+Recurrence Relation:
+Combination at a target simply equals the sum of all combinations of every number in the original nums list, if the number is smaller than target.

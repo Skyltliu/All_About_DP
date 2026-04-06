@@ -1,0 +1,11 @@
+1d dp
+Each cell is minimal number of perfect square to sum i.
+
+Base case:
+At i = 0, it is 0, since no amount of perfect squares can sum to 0 (0 is not a perfect square number)
+
+Recurrence Relation:
+For each i, we can try every number lower than it whose value squared is less than or equal to i.
+We update dp at i if we can find a smaller number of perfect square numbers to sum to it, which we look up from the dp table for i - the number squared.
+
+Return last number in the dp array (which is our target n).

@@ -5,6 +5,7 @@ if n is 1, the result is k, if n is 2, the result is k * k (k times the number o
 
 Recurrence Relation:
 Since we can't have three consecutive, if the current post is a different color as the previous two posts, 
-then we really only have (k-1) color choices, multiplied by previous two possibilities.
+then we really only have (k-1) color choices, and if we have the same color as previous, then the post before previous must also be a different color, 
+meaning it is still (k-1) different color choices, multiplied by previous two possibilities.
 
 Simply return dp[n]

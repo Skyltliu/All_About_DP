@@ -1,0 +1,10 @@
+1d dp
+This is similar to find nth fibonacci number but with different subproblem conditions.
+Base case:
+if n is 1, the result is k, if n is 2, the result is k * k (k times the number of options in the first place)
+
+Recurrence Relation:
+Since we can't have three consecutive, if the current post is a different color as the previous two posts, 
+then we really only have (k-1) color choices, multiplied by previous two possibilities.
+
+Simply return dp[n]
